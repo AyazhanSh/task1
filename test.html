@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+
+</head>
+
+<body>
+	<script>
+
+		function func(hours, minutes, interval) {
+	
+
+			var newhour = (hours + Math.floor((minutes + interval) / 60))%24;
+			var newmin = (minutes + interval) % 60;
+
+
+
+
+			if (newhour >= 0 && newhour <= 23 && newmin >= 0 && newmin <= 59) {
+				if (newmin < 10) {
+					if (newhour === 24) {
+						return "00:0" + newmin;
+					} else if (newhour < 10) {
+						return "0" + newhour + ":0" + newmin;
+					} else {
+						return newhour + ":0" + newmin;
+					}
+				} else {
+					if (newhour === 24) {
+						return "00:" + newmin;
+					} else if (newhour < 10) {
+						return "0" + newhour + ":" + newmin;
+					} else {
+						return newhour + ":" + newmin;
+					}
+				}
+			} else {
+				if (newhour === 24) {
+					if (newmin < 10) {
+						return "00:0" + newmin;
+					} else {
+						return "00:" + newmin;
+					}
+				} 
+			}
+		}
+		console.log(func(15, 00, 720));
+	</script>
+
+
+
+	</div>
+
+
+</body>
+
+</html>
